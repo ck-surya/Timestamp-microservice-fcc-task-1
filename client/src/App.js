@@ -9,7 +9,8 @@ function App() {
   const fetchTimestamp = async () => {
     const apiUrl = process.env.REACT_APP_API_URL;
     try {
-      const endPoint= `${apiUrl}/date?${dateInput}`
+      const endPoint= `${apiUrl}date?${dateInput}`
+      console.log(endPoint);
       const response = await axios.get(endPoint);
       setTimeStamp(response.data);
     } catch (error) {

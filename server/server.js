@@ -5,13 +5,13 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 app.use(cors());
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(express.json());
 
 
-app.get('/api/date?', (req, res) => {
+app.get('/api/:date?', (req, res) => {
     const {data} = req.params;
     let dateObj;
     if(!data){
